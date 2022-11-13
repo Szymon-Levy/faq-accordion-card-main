@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root{
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+    --Light-grayish-blue: hsl(240, 5%, 91%);
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+    min-height: 100vh;
+    background-image: linear-gradient(0deg, var(--Soft-blue), var(--Soft-violet));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    color: var(--Very-dark-grayish-blue);
+}
+
+img{
+    max-width: 100%;
+}
+
+.container{
+    width: 100%;
+    max-width: 935px;
+    margin: auto;
+    padding: 0 25px;
+}
+
+.faq-section {
+    background-color: white;
+    border-radius: 30px;
+    padding: 50px 30px;
+    margin-top: 50px;
+    box-shadow: 0px 18px 50px -20px var(--Very-dark-desaturated-blue);
+}
+
+.faq-column h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--Very-dark-desaturated-blue);
+    margin-bottom: 15px;
+}
+
+.accordion-wrapper .accordion-heading.active {
+    font-weight: 700;
+}
+
+.accordion-wrapper .acordion-element{
+    border-bottom: 1px solid var(--Light-grayish-blue)
+}
+
+.accordion-wrapper .accordion-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    font-size: 13px;
+    color: var(--Very-dark-desaturated-blue);
+    transition: .5s color;
+    cursor: pointer;
+}
+
+.accordion-wrapper .accordion-heading:hover{
+    color: var(--Soft-red);
+}
+
+.accordion-wrapper .accordion-heading .icon{
+    width: 10px;
+    height: 100%;
+    margin-left: 15px;
+}
+
+.accordion-wrapper .accordion-heading .icon img{
+    transition: .5s;
+}
+
+.accordion-wrapper .accordion-heading.active .icon img{
+    transform: rotate(180deg);
+}
+
+.accordion-wrapper .acordion-element .accordion-text {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .5s ease, margin .2s;
+    color: var(--Dark-grayish-blue);
+}
+
+.accordion-wrapper .accordion-heading.active + .accordion-text {
+    margin: 0 20px 15px 0;
+}
+
+
+/*-----images-----*/
+
+.image-column {
+    position: relative;
+    text-align: center;
+    margin-top: -156px;
+    margin-bottom: 50px;
+}
+
+.image-column .box{
+    position: absolute;
+    display: none;
+}
+
+.image-column picture {
+    display: block;
+}
+
+.image-column picture.woman {
+    max-width: 240px;
+    margin: auto;
+    position: relative;
+}
+
+.image-column picture.pattern {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+}
+
+
+/*-------------RWD-------------*/
+
+
+@media(min-width: 991px){
+    .faq-section {
+        display: flex;
+        padding: 0px;
+        gap: 60px;
+    }
+    .image-column,
+    .faq-column {
+        width: 50%;
+    }
+    .faq-column h2 {
+        text-align: left;
+        font-size: 33px;
+    }
+    .accordion-wrapper .accordion-heading {
+        font-size: 14px;
+        padding: 16px 0;
+    }
+    .faq-column {
+        padding: 80px 80px 80px 0px;
+    }
+    .image-column {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .image-column .box {
+        display: block;
+        left: -90px;
+        top: 50%;
+        transform: translateY(-34%);
+        z-index: 5;
+    }
+    .image-column picture.woman {
+        max-width: unset;
+        position: absolute;
+        left: -75px;
+        top: 50%;
+        transform: translateY(-55%);
+    }
+    .image-column picture.pattern {
+        width: 1000px;
+        bottom: unset;
+        top: 50%;
+        right: 0;
+        left: unset;
+        transform: translate(0, -59%);
+    }
+    .image-column .shapes {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+}
